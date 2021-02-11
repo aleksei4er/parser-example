@@ -10,7 +10,7 @@ interface ItemRepositoryInterface
 {
     public function find(int $id);
 
-    public function findByHref(string $href): Item;
+    public function findByHref(string $href): Item | null;
 
     public function listing(): Query;
 

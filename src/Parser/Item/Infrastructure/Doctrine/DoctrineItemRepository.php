@@ -69,7 +69,7 @@ class DoctrineItemRepository extends DoctrineRepository implements ItemRepositor
      * @return Item 
      * @throws RuntimeException 
      */
-    public function findByHref(string $href): Item
+    public function findByHref(string $href): Item | null
     {
         return $this->findOneBy(['href' => $href]);
     }

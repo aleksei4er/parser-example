@@ -13,7 +13,7 @@ class CheckUniqueMiddleware extends MessengerMiddleware
 
     public function handle(Envelope $envelope, StackInterface $stack): Envelope
     {
-        if ($this->repository->findByHref($envelope->getMessage()->getHref())) {
+        if ($item = $this->repository->findByHref($envelope->getMessage()->getHref())) {
             throw new \Exception("Item already exists");
         }
 

@@ -29,6 +29,7 @@ class Parser implements ServiceParserInterface
             try {
                 $this->bus->dispatch(new CreateItemCommand($site, $value));
             } catch (\Throwable $e) {
+                echo $e->getMessage() . "\n";
                 echo "Skipping {$value['href']}\n";
             }
             return true;
