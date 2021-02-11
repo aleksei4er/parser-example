@@ -1,0 +1,21 @@
+{% extends 'Layouts/default.html.twig' %}
+
+{% block body %}
+<div class="mx-auto" style="width: 600px;">
+    <h1 class="text-2xl">{{ item.h1}}</h1>
+    <br>
+    {% if item.image %}
+    <p>
+        <img src="{{ item.image }}">
+        <br>
+    </p>
+    {% endif %}
+    <p>
+    {{ item.content|raw }}
+    </p>
+    <p class="my-4">
+        <a href="{{path('index')}}" class="underline">список</a>
+    </p>
+</div>
+
+{% endblock %}

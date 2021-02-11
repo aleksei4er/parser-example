@@ -1,0 +1,21 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App\Parser\Site:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Parser/Site/Domain/Entity'
+                prefix: 'App\Parser\Site\Domain\'
+                alias: ParserSite
+            App\Parser\Item:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Parser/Item/Domain/Entity'
+                prefix: 'App\Parser\Item\Domain\'
+                alias: ParserItem

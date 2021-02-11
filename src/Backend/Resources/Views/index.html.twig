@@ -1,0 +1,21 @@
+{% extends 'Layouts/default.html.twig' %}
+
+{% block body %}
+<table class="table-fixed mx-auto" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>H1</th>
+        <th>Href</th>
+    </tr>
+    {% for article in items %}
+        <tr {% if loop.index is odd %}class="bg-emerald-200"{% endif %}>
+            <td>{{ article.id }}</td>
+            <td><a class="underline" href="{{ path("view", {id: article.id}) }}">{{ article.h1 }}</a></td>
+        <td>{{ article.href }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+{% endblock %}
