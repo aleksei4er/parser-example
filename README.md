@@ -14,6 +14,7 @@ docker-compose up -d
 ## Application installation
 
 ```php
+cp .env.example .env
 composer install
 php bin/console app:create:site rbc
 php bin/console app:parse:articles rbc
