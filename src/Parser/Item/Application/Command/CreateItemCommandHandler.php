@@ -3,9 +3,9 @@
 namespace App\Parser\Item\Application\Command;
 
 use App\Parser\Item\Domain\Repository\ItemRepositoryInterface;
-use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
+use App\Shared\Infrastructure\Messenger\MessengerHandler;
 
-final class CreateItemCommandHandler implements MessageHandlerInterface
+final class CreateItemCommandHandler extends MessengerHandler
 {
     /**
      * 
