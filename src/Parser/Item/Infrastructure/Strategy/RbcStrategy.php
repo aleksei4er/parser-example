@@ -3,18 +3,19 @@
 namespace App\Parser\Item\Infrastructure\Strategy;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Parser\Item\Domain\Contracts\ItemParserInterface;
 use App\Parser\Item\Domain\Contracts\SiteStrategyInterface;
+use App\Shared\Infrastructure\HttpClient\ClientServiceInterface;
 
 class RbcStrategy implements SiteStrategyInterface
 {
     /**
      * 
-     * @param HttpClientInterface $http 
+     * @param ClientServiceInterface $http 
+     * @param ItemParserInterface $crawler 
      * @return void 
      */
-    public function __construct(private HttpClientInterface $http, private ItemParserInterface $crawler) {}
+    public function __construct(private ClientServiceInterface $http, private ItemParserInterface $crawler) {}
 
     /**
      * Load the list of article urls

@@ -31,3 +31,6 @@ services:
     # please note that last definitions always *replace* previous ones
     Symfony\Component\DomCrawler\Crawler:
         autowire: true
+    
+    Symfony\Component\String\UnicodeString:
+        autowire: true
