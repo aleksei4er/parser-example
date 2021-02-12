@@ -5,13 +5,13 @@
     <tr>
         <th>ID</th>
         <th>H1</th>
-        <th>Href</th>
+        <th>Content</th>
     </tr>
     {% for article in items %}
         <tr {% if loop.index is odd %}class="bg-emerald-200"{% endif %}>
             <td>{{ article.id }}</td>
             <td><a class="underline" href="{{ path("view", {id: article.id}) }}">{{ article.h1 }}</a></td>
-        <td>{{ article.href }}</td>
+        <td>{{ article.content }}...</td>
         </tr>
     {% endfor %}
 </table>
